@@ -1,6 +1,15 @@
 '''
-    uso do with na Orientação a Objetos em Python
+    Uso do with na Orientação a Objetos em Python
     para abertura e fechamento de sessões
+
+    exc_type: O tipo de exception que ocorreu, se houver.
+    Se não ocorreu nenhuma exceção, este parâmetro será None.
+
+    exc_val: O value correspondente à exception que ocorreu, se houver.
+    Se não ocorreu nenhuma exceção, este parâmetro será None.
+
+    exc_tb: O traceback (rastreamento de pilha) associado à exception ocorrida.
+    Se não ocorreu nenhuma exceção, este parâmetro também será None.
 '''
 
 
