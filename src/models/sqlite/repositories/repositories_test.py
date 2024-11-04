@@ -10,3 +10,9 @@ def test_list_pets():
     repo = PetsRepository(db_connection_handler)
     response = repo.list_pets()
     print(f"\n{response}")
+
+
+def test_delete_test():
+    repo = PetsRepository(db_connection_handler)
+    repo.delete_pet(name="belinha")
+    # print(f"\n{response}")
