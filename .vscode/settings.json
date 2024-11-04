@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "**/__pycache": true
+  },
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true
+}
