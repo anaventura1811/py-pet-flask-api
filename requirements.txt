@@ -15,3 +15,5 @@ tomli==2.0.2
 tomlkit==0.13.2
 typing_extensions==4.12.2
 virtualenv==20.27.1
+SQLAlchemy==2.0.36
+python-dotenv==1.0.1
