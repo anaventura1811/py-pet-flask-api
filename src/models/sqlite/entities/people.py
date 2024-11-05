@@ -9,7 +9,7 @@ class PeopleTable(Base):
     first_name = Column(String, nullable=False)
     last_name = Column(String, nullable=False)
     age = Column(BIGINT, nullable=False)
-    pet_id = Column(BIGINT, ForeignKey["pets.id"])
+    pet_id = Column(BIGINT, ForeignKey("pets.id"))
 
     def __repr__(self):
         name = f"name={self.first_name},last_name={self.last_name}"
