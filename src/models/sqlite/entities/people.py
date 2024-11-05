@@ -12,6 +12,8 @@ class PeopleTable(Base):
     pet_id = Column(BIGINT, ForeignKey("pets.id"))
 
     def __repr__(self):
-        name = f"name={self.first_name},last_name={self.last_name}"
-        info = f"[{name}, pet_id={self.pet_id}]"
+        name = f"[name={self.first_name}, "
+        last_name = f"last_name={self.last_name}, "
+        pet_id = f"pet_id={self.pet_id}]"
+        info = name + last_name + pet_id
         return f"People {info}"

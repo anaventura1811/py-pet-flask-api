@@ -48,7 +48,6 @@ def test_list_pets():
     mock_connection.session.query.assert_called_once_with(PetsTable)
     mock_connection.session.all.assert_called_once()
     mock_connection.session.filter.assert_not_called()
-    print(f"\n{response}")
     assert response[0].name == "dog"
 
 

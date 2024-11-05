@@ -1,9 +1,10 @@
 from sqlalchemy.orm.exc import NoResultFound
 from src.models.sqlite.entities.people import PeopleTable
 from src.models.sqlite.entities.pets import PetsTable
+import src.models.sqlite.interfaces.people_repository as interface
 
 
-class PeopleRepository:
+class PeopleRepository(interface.PeopleRepositoryInterface):
     def __init__(self, db_connection) -> None:
         self.__db_connection = db_connection
 
@@ -32,16 +33,17 @@ class PeopleRepository:
                 person = (
                     database.session
                     .query(PeopleTable)
-                    .outerjoin(PetsTable, PetsTable.id == PeopleTable.pet_id)
                     .filter(PeopleTable.id == person_id)
+                    .outerjoin(PetsTable, PetsTable.id == PeopleTable.pet_id)
                     .with_entities(
                         PeopleTable.first_name,
                         PeopleTable.last_name,
                         PetsTable.name.label("pet_name"),
                         PetsTable.type.label("pet_type"),
                     )
-                    .first()
+                    .one()
                 )
                 return person
             except NoResultFound:
+                print('\nentrei aqui')
                 return None

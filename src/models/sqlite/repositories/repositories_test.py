@@ -35,10 +35,9 @@ def test_insert_person():
         pet_id=pet_id)
 
 
-# @pytest.mark.skip(reason="integration test")
+@pytest.mark.skip(reason="integration test")
 def test_get_person():
     person_id = 1
     repo = PeopleRepository(db_connection_handler)
     response = repo.get_person(person_id=person_id)
-    print(f"\n{response}")
-    print(response.pet_name)
+    assert response is not None
