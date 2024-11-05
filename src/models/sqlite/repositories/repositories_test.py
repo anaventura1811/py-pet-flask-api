@@ -1,3 +1,4 @@
+import pytest
 from src.models.sqlite.settings.connection import db_connection_handler
 from .pets_repository import PetsRepository
 
@@ -12,7 +13,7 @@ def test_list_pets():
     print(f"\n{response}")
 
 
+@pytest.mark.skip(reason="integration test")
 def test_delete_test():
     repo = PetsRepository(db_connection_handler)
     repo.delete_pet(name="belinha")
-    # print(f"\n{response}")
