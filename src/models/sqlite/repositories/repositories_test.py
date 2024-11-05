@@ -14,6 +14,6 @@ def test_list_pets():
 
 
 @pytest.mark.skip(reason="integration test")
-def test_delete_test():
+def test_delete_pet():
     repo = PetsRepository(db_connection_handler)
     repo.delete_pet(name="belinha")
