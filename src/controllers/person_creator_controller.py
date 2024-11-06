@@ -25,17 +25,10 @@ class PersonCreatorController:
         # Regex para caracteres que não são letras
         invalid_characters = re.compile(r'[^a-z]', flags=re.IGNORECASE)
 
-        if invalid_characters.search(
-            first_name
-            ) or invalid_characters.search(
-                last_name):
+        if invalid_characters.search(first_name) or invalid_characters.search(last_name):
             raise Exception("Nome da pessoa inválido!")
 
-    def __insert_person_in_db(self,
-                              first_name: str,
-                              last_name: str,
-                              age: int,
-                              pet_id: int) -> None:
+    def __insert_person_in_db(self, first_name: str, last_name: str, age: int, pet_id: int) -> None:
         self.__people_repository.insert_person(
             first_name=first_name,
             last_name=last_name,
