@@ -7,7 +7,7 @@ This repository contains a Pet Adoption API developed with Python and Flask. Thi
 The API includes the following endpoints for managing pets and people:
 
 - **List Pets**: `GET /pets` - Returns a list of all pets available for adoption.
-- **Delete Pet**: `DELETE /pet/<name>` - Removes a pet from the adoption list by ID.
+- **Delete Pet**: `DELETE /pet/<name>` - Removes a pet from the adoption list by name.
 - **Create Person**: `POST /people` - Adds a new person to the database.
 - **Get Person by ID**: `GET /people/<person_id>` - Retrieves details of a specific person by ID.
 
