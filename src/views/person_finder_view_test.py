@@ -1,6 +1,6 @@
 from typing import Dict
 from .person_finder_view import PersonFinderView
-from .http_types.http_request import HttpRequest
+from .mock_http_request import MockHttpRequest
 
 
 class MockPersonFinderController:
@@ -33,7 +33,7 @@ def test_person_finder_view():
         "pet_type": "dog"
     }
 
-    http_request = HttpRequest(param=param)
+    http_request = MockHttpRequest(param=param)
 
     expected_response = {
         "data": {

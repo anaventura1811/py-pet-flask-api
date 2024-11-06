@@ -1,6 +1,10 @@
+from typing import Dict
 from .pet_delete_view import PetDeleteView
-from .http_types.http_request import HttpRequest
 
+
+class MockHttpRequest:
+    def __init__(self, param: Dict = None) -> None:
+        self.param = param
 
 class MockPetDeleteController:
     def delete(self, name: str) -> None:
@@ -13,7 +17,7 @@ def test_pet_delete_view():
         "name": "Bentinho"
     }
 
-    http_request = HttpRequest(param=param)
+    http_request = MockHttpRequest(param=param)
 
     controller = MockPetDeleteController()
     view = PetDeleteView(controller)

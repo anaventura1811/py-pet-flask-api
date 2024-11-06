@@ -1,8 +1,11 @@
 from typing import List, Dict
 from src.models.sqlite.entities.pets import PetsTable
 from .pet_list_view import PetListView
-from .http_types.http_request import HttpRequest
 
+
+class MockHttpRequest:
+    def __init__(self) -> None:
+        pass
 
 class MockPetListController:
     def __init__(self, pets: List[PetsTable]) -> None:
@@ -30,7 +33,7 @@ def test_pet_list_view():
     pets = [PetsTable(id=1, name="Serena", type="dog"),
             PetsTable(id=2, name="Bentinho", type="cat")]
 
-    http_request = HttpRequest()
+    http_request = MockHttpRequest()
 
     expected_response = {
         "data": {
