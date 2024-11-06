@@ -1,6 +1,10 @@
 from typing import Dict
 from .person_creator_view import PersonCreatorView
-from .http_types.http_request import HttpRequest
+
+
+class MockHttpRequest:
+    def __init__(self, body: Dict = None) -> None:
+        self.body = body
 
 
 class MockPersonCreatorController:
@@ -23,7 +27,7 @@ def test_person_creator_view():
         "pet_id": 123,
     }
 
-    http_request = HttpRequest(body=body)
+    http_request = MockHttpRequest(body=body)
 
     expected_response = {
         "data": {

@@ -1,5 +1,5 @@
 from .pet_delete_view import PetDeleteView
-from .http_types.http_request import HttpRequest
+from .mock_http_request import MockHttpRequest
 
 
 class MockPetDeleteController:
@@ -13,7 +13,7 @@ def test_pet_delete_view():
         "name": "Bentinho"
     }
 
-    http_request = HttpRequest(param=param)
+    http_request = MockHttpRequest(param=param)
 
     controller = MockPetDeleteController()
     view = PetDeleteView(controller)
