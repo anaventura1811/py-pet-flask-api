@@ -31,6 +31,6 @@ def find_person(person_id: int):
 
         return jsonify(http_response.body), http_response.status_code
 
-    except Exception as excp:
-        http_response = handle_errors(excp)
+    except Exception as exc:
+        http_response = handle_errors(exc)
         return jsonify(http_response.body), http_response.status_code
