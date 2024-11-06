@@ -1,7 +1,3 @@
-'''
-    Para testes unitários: fazer mock do controller,
-    fazer um http request e verificar o retorno do http response
-'''
 from typing import Dict
 from .person_finder_view import PersonFinderView
 from .http_types.http_request import HttpRequest
