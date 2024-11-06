@@ -4,8 +4,7 @@ from .person_finder_controller import PersonFinderController
 
 
 class MockPerson:
-    def __init__(self,
-                 first_name, last_name, pet_name, pet_type, person_id) -> None:
+    def __init__(self, first_name, last_name, pet_name, pet_type, person_id) -> None:
         self.first_name = first_name
         self.last_name = last_name
         self.pet_name = pet_name

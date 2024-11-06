@@ -3,8 +3,7 @@ from .person_creator_controller import PersonCreatorController
 
 
 class MockPeopleRepository:
-    def insert_person(
-            self, first_name: str, last_name: str, age: int, pet_id: int):
+    def insert_person(self, first_name: str, last_name: str, age: int, pet_id: int):
         pass
 
 

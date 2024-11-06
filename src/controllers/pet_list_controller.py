@@ -1,10 +1,10 @@
 from typing import Dict, List
-import src.models.sqlite.interfaces.pets_repository as intf
+from src.models.sqlite.interfaces.pets_repository import PetsRepositoryInterface
 from src.models.sqlite.entities.pets import PetsTable
 
 
 class PetListController:
-    def __init__(self, pet_repository: intf.PetsRepositoryInterface) -> None:
+    def __init__(self, pet_repository: PetsRepositoryInterface) -> None:
         self.__pet_repository = pet_repository
 
     def list(self) -> Dict:

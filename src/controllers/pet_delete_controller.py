@@ -1,8 +1,8 @@
-import src.models.sqlite.interfaces.pets_repository as intf
+from src.models.sqlite.interfaces.pets_repository import PetsRepositoryInterface
 
 
 class PetDeleteController:
-    def __init__(self, pet_repository: intf.PetsRepositoryInterface) -> None:
+    def __init__(self, pet_repository: PetsRepositoryInterface) -> None:
         self.__pet_repository = pet_repository
 
     def delete(self, name: str) -> None:
