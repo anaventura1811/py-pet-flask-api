@@ -18,8 +18,9 @@ def list_pets():
 
 @pets_routes_bp.route('/pets/<name>', methods=["DELETE"])
 def delete_pet(name: str):
+
     http_request = HttpRequest(param={"name": name})
     view = pet_delete_composer()
     http_response = view.handle(http_request)
 
-    return jsonify({}), http_response.status_code
+    return jsonify(http_response.body), http_response.status_code
